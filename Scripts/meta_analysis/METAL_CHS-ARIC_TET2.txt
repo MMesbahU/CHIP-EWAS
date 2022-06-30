@@ -1,0 +1,86 @@
+# This file includes a series of comments. Each comment is marked 
+# by a # character as the first character in the line.
+#
+# This is a comment!
+
+# Meta-analysis weighted by standard error does not work well
+# when different studies used very different transformations.
+# In this case, some attempt was made to use similar trait
+# transformation and you can request a standard error based
+# analysis by uncommenting the following line:
+SCHEME   STDERR
+
+# Usually, it is a good to apply genomic control to each
+# input file. However, in this example, all the markers being
+# examined reside in strongly associated loci and it probably 
+# is not a good idea. To find out what happens if you turn
+# on genomic control, uncomment the following line.
+# GENOMICCONTROL ON
+
+# To help identify allele flips, it can be useful to track
+# allele frequencies in the meta-analysis. To enable this
+# capability, uncomment the following two lines.
+AVERAGEFREQ ON
+MINMAXFREQ ON
+
+# To restric meta-analysis to two previously reported SNPs
+# and summarize study specific results, uncomment the two
+# lines that follow.
+# ADDFILTER SNP IN (rs10830963,rs563694)
+# VERBOSE ON
+
+# /broad/hptmp/mesbah/DNAm/April5_2021/ewasCHIP/AA_CHIP_EWAS.SWAN.tsv
+# Describe and process the AA
+# CPG.Labels	T.statistic	P.value	Holm.sig	FDR	gc.p.value	adj.intercept	effect.size	std.error	RefAlt
+SEPARATOR   TAB
+MARKER   CPG.Labels
+ALLELE   Ref Alt
+FREQ     adj.intercept
+EFFECT   effect.size
+STDERR   std.error
+
+PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/ewasTET2/AA_TET2_EWAS.SWAN.tsv.gz
+
+## Describe and process the EA
+# 
+## CPG.Labels    T.statistic     P.value Holm.sig        FDR     gc.p.value      adj.intercept   effect.size     std.error       RefAlt
+
+SEPARATOR   TAB
+MARKER   CPG.Labels
+ALLELE   Ref Alt
+FREQ     adj.intercept
+EFFECT   effect.size
+STDERR   std.error
+
+PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/ewasTET2/EA_TET2_EWAS.SWAN.tsv.gz
+
+####################### ARIC
+## ARIC AA
+## CPG.Labels	T.statistic	P.value	Holm.sig	FDR	gc.p.value	df.top	df.bottom	adj.intercept	effect.size	std.error	Ref	Alt
+SEPARATOR   TAB
+MARKER   CPG.Labels
+ALLELE   Ref Alt
+FREQ     adj.intercept
+EFFECT   effect.size
+STDERR   std.error
+
+PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/replicationARIC/ARIC_AA.TET2_EWAS.tsv
+
+#### ARIC EA
+
+SEPARATOR   TAB
+MARKER   CPG.Labels
+ALLELE   Ref Alt
+FREQ     adj.intercept
+EFFECT   effect.size
+STDERR   std.error
+
+PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/replicationARIC/ARIC_EA.TET2_EWAS.tsv
+
+#########################################
+# Execute meta-analysis
+# OUTFILE /broad/hptmp/mesbah/metagwas/CHIP_MetaAnalysis_GC .TBL
+OUTFILE /broad/hptmp/mesbah/DNAm/April5_2021/replicationARIC/meta_CHS_ARIC.TET2_EWAS .TBL
+
+ANALYZE HETEROGENEITY
+
