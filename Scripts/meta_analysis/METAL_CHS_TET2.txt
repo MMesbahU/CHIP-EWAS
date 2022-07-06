@@ -1,16 +1,19 @@
 
+### /medpop/esp2/mesbah/tools/METAL/build/metal/metal
 
-# Inverse-variance weighted Meta-analysis
+# Inverse-variance weighted Meta-analysis 
 SCHEME   STDERR
 
 # Genomic control (commonly used in GWAS, but not EWAS)
 # GENOMICCONTROL ON
 
-# Average DNAm in different cohort
+# Average DNAm in different cohort 
 AVERAGEFREQ ON
 MINMAXFREQ ON
 
-################# CHS AA
+
+############# CHS #################
+##### CHS AA
 # Describe and process the AA
 # CPG.Labels	T.statistic	P.value	Holm.sig	FDR	gc.p.value	adj.intercept	effect.size	std.error	RefAlt
 SEPARATOR   TAB
@@ -20,9 +23,9 @@ FREQ     adj.intercept
 EFFECT   effect.size
 STDERR   std.error
 
-PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/ewasDNMT3A/AA_DNMT3A_EWAS.SWAN.tsv
+PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/ewasTET2/v2.AA_TET2_EWAS.SWAN.tsv.gz
 
-################ CHS EA
+##### CHS EA
 # Describe and process the EA
 # 
 # CPG.Labels    T.statistic     P.value Holm.sig        FDR     gc.p.value      adj.intercept   effect.size     std.error       RefAlt
@@ -33,10 +36,11 @@ FREQ     adj.intercept
 EFFECT   effect.size
 STDERR   std.error
 
-PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/ewasDNMT3A/EA_DNMT3A_EWAS.SWAN.tsv
+PROCESS /broad/hptmp/mesbah/DNAm/April5_2021/ewasTET2/EA_TET2_EWAS.SWAN.tsv.gz
 
 # Execute meta-analysis
-OUTFILE /broad/hptmp/mesbah/DNAm/April5_2021/ewasDNMT3A/meta_AA_EA_DNMT3A_EWAS.SWAN .TBL
+OUTFILE /broad/hptmp/mesbah/DNAm/April5_2021/ewasTET2/meta_AA_EA_TET2_EWAS.SWAN .TBL
 
 ANALYZE HETEROGENEITY
+
 
