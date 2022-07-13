@@ -2,7 +2,7 @@
 Code used to generate figures and tables in Uddin, M. M. et al. [Clonal hematopoiesis of indeterminate potential, DNA methylation, and risk for coronary artery disease.](https://www.researchsquare.com/article/rs-1463822/v1)
 
 ## CHIP calling
-CHIP calling as done using the pipeline described in [Bick,  et  al. 2021](https://www.nature.com/articles/s41586-020-2819-2)  (Terra workflow:https://app.terra.bio/#workspaces/terra-outreach/CHIP-Detection-Mutect2)
+CHIP calling was done using the pipeline described in [Bick,  et  al. 2021](https://www.nature.com/articles/s41586-020-2819-2)  (Terra workflow:https://app.terra.bio/#workspaces/terra-outreach/CHIP-Detection-Mutect2)
 
 ## EWAS
 EWAS was performed using **CpGassoc** R package [Scripts](https://github.com/MMesbahU/CHIP-EWAS/tree/main/Scripts/EWAS)
