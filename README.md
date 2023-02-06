@@ -8,7 +8,7 @@ CHIP calling was done using the pipeline described in [Bick,  et  al. 2021](http
 EWAS was performed using **CpGassoc** R package [Scripts](https://github.com/MMesbahU/CHIP-EWAS/tree/main/Scripts/EWAS)
 
 ## Meta-Analysis
-MEta-analysis was performed using **METAL** software [Scripts](https://github.com/MMesbahU/CHIP-EWAS/tree/main/Scripts/meta_analysis)
+Meta-analysis was performed using **METAL** software [Scripts](https://github.com/MMesbahU/CHIP-EWAS/tree/main/Scripts/meta_analysis)
 
 ## Mendelian randomization (MR)
 Mendelian randomization was performed using GSMR from GCTA software [Scripts](https://github.com/MMesbahU/CHIP-EWAS/tree/main/Scripts/MR_Analysis)
